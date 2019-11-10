@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>PORTA BORRADOR</title>
     <link rel="stylesheet" href="../assets/css/stylecaracteristicas.css">
-    <script src="../assets/js/javascript.js" language="javascript" type="text/javascript"></script>
 </head>
 <body>
     <div class="ContenedorSlide">
@@ -20,13 +19,46 @@
             <img src="../assets/img/Imagen 8.jpg">
             <div class="texto">Este es el portaborrador para tizas</div>
         </div>
-        <a class="anterior" onclick="plusslides(-1)">&#10094;</a>
-        <a class="siguiente" onclick="plusslides(1)">&#10095;</a>
+        <a class="anterior" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="siguiente" onclick="plusSlides(1)">&#10095;</a>
     </div>
     <br>
     <div style="text-align: center">
         <span class="punto" onclick="currentSlide(1)"></span>
         <span class="punto" onclick="currentSlide(2)"></span>
     </div>
+    <nav>
+        <a href="../index.html"> <img src="../assets/img/botonvolver1.png" alt=""></a>
+    </nav> 
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        // Next/previous controls
+        function plusSlides(n) {
+        showSlides(slideIndex += n);
+        }
+
+        // Thumbnail image controls
+        function currentSlide(n) {
+        showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("myslide");
+        var dots = document.getElementsByClassName("punto");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+        }
+    </script>
 </body>
 </html>

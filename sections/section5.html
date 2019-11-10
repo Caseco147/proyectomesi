@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>preguntas</title>
+    <link rel="stylesheet" href="../assets/css/stylepreguntas.css">
+</head>
+<body>
+    <nav>
+        <a href="../index.html"> <img src="../assets/img/botonvolver1.png" alt=""></a>
+    </nav> 
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <ul class="lista">
+        <li class="pregunta" data-resp_id="resp_1">
+          <span>Porque tuvieron que hacer este producto?</span>
+          <i class="ico_resp fas fa-angle-down"></i>
+        </li>
+        <li class="respuesta" id="resp_1">
+          <span id="sp_resp_1">Lo hicimos porque el gobierno hizo un concurso de 3d solo para escuelas industriales, y para ganar teniamos que crear un producto. Solo por participar nos dieron 15 licencias por 3 anios en programas de adobe, si ganamos el concurso nos daran un smartphone y al profesor un viaje a california al centro de innovacion adobe.</span>
+        </li>
+        <li class="pregunta" data-resp_id="resp_2">
+          <span>De que material esta hecho?</span>
+          <i class="ico_resp fas fa-angle-down"></i>
+        </li>
+        <li class="respuesta" id="resp_2">
+          <span id="sp_resp_2">esta hecho de plastico.</span>
+        </li>
+  </ul>
+  <script>
+      // Cuando se hace click en una pregunta
+$('.pregunta').on('click', function () {
+  // Si la pregunta en la que se hizo click NO está abierta.
+  if (!$('#' + $(this).data('resp_id')).hasClass('resp_act')) {
+    // Cierro la que esté abierta, si es que hay alguna
+    $('.ico_resp').removeClass('ico_resp_act');
+    $('.resp_act').css('height', 0);
+    $('.resp_act').removeClass('resp_act');
+    // Abro la pregunta en la que se hizo click
+    $('#' + $(this).data('resp_id')).css('height', $('#sp_' + $(this).data('resp_id')).height() + 'px');
+    $('#' + $(this).data('resp_id')).addClass('resp_act');
+    $('i', this).addClass('ico_resp_act');
+  // Si no, si la pregunta ya está abierla
+  } else {
+    // La cierro
+    $('.ico_resp').removeClass('ico_resp_act');
+    $('.resp_act').css('height', 0);
+    $('.resp_act').removeClass('resp_act');
+  }
+});
+  </script>
+</body>
+<div class="fondo"></div>
+</html>
