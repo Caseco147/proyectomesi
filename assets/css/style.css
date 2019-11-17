@@ -44,7 +44,7 @@ body{
     margin-top: 5%;
     background-position: center;
     height: 486px;
-    background-image: url('../img/Imagen\ 1.jpg');
+    background-image: url('../img/imagen1.jpg');
     border-color: black;
     border-style: solid;
 }
@@ -67,5 +67,6 @@ footer{
     grid-template-columns: 33.33% 33.33% 33.33%;
     grid-template-rows: 100%;
     background-color: red;
+    height: 90px;
 }
 
