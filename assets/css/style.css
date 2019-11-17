@@ -1,3 +1,8 @@
+.contenedor{
+    display: grid;
+    grid-template-columns:repeat(1,3fr) ;
+    margin: 2%;
+}
 body{
     background-color: slategrey;
 }
@@ -62,5 +67,6 @@ footer{
     grid-template-columns: 33.33% 33.33% 33.33%;
     grid-template-rows: 100%;
     background-color: red;
+    height: 90px;
 }
 
