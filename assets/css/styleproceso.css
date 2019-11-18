@@ -82,5 +82,5 @@ nav{
     border-radius: 3px 0 0 3px;
 }
 .anterior:hover, .siguiente:hover{
-    background-color: rgba(0,0,0,0.8);
+    background-color: black
 }
